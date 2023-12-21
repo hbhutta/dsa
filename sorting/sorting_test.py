@@ -1,19 +1,22 @@
 import unittest
 
 class TestSort(unittest.TestCase):
+    def test_simple(self, sorter):
+        self.assertEqual([1,2,3,4], sorter([1,3,2,4]))
+
+
     def test_increasing_order(self, sorter):
-        try :
-            self.assertEqual([1,2,3,4,5,6,7,8,9], sorter([1,2,3,4,5,6,7,8,9]))
-            print('Test passed!')
-        except:
-            print('Sorting increasing order array failed..')
+        self.assertEqual([1,2,3,4,5,6,7,8,9], sorter([1,2,3,4,5,6,7,8,9]))
+        print('Test passed!')
+        
+        # print('Sorting increasing order array failed..')
 
     def test_decreasing_order(self, sorter):
-        try: 
-            self.assertEqual([1,2,3,4,5,6,7,8,9], sorter([9,8,7,6,5,4,3,2,1]))
-            print('Test passed!')
-        except:
-            print('Sorting decreasing order array failed..')
+        # try: 
+        self.assertEqual([1,2,3,4,5,6,7,8,9], sorter([9,8,7,6,5,4,3,2,1]))
+        print('Test passed!')
+        # except:
+            # print('Sorting decreasing order array failed..')
 
     def test_negatives(self, sorter):
         try: 
